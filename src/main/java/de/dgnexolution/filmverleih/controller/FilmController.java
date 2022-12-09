@@ -33,9 +33,9 @@ public class FilmController {
      * @return
      */
     @GetMapping("/all")
-    public ResponseEntity<List<Film>> getAllTickets() {
-        List<Film> tickets = filmService.findAllFilme();
-        return new ResponseEntity<>(tickets, HttpStatus.OK);
+    public ResponseEntity<List<Film>> getAllFilme() {
+        List<Film> filme = filmService.findAllFilme();
+        return new ResponseEntity<>(filme, HttpStatus.OK);
     }
 
     /**
@@ -44,7 +44,7 @@ public class FilmController {
      * @return
      */
     @GetMapping("/find/{id}")
-    public ResponseEntity<Film> getTicketById(@PathVariable("id") Long id) {
+    public ResponseEntity<Film> getFilmById(@PathVariable("id") Long id) {
         // Hinweis: Die Methode wird nicht mehr rot markiert sein, wenn diese Methode in der Klasse FilmService existiert
         Film film = filmService.findFilmById(id);
         return new ResponseEntity<>(film, HttpStatus.OK);
@@ -56,7 +56,7 @@ public class FilmController {
      * @return
      */
     @PostMapping("/add")
-    public ResponseEntity<Film> addTicket(@RequestBody Film film) {
+    public ResponseEntity<Film> addFilm(@RequestBody Film film) {
         Film newFilm = filmService.addFilm(film);
         return new ResponseEntity<>(newFilm, HttpStatus.CREATED);
     }
