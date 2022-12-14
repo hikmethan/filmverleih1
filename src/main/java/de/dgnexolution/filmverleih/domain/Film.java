@@ -11,12 +11,14 @@ import javax.persistence.*;
 @Entity
 @Table
 public class Film {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     // TODO: restlichen Attribute ergänzen
 
+    // TODO: Konstruktor mit Attributen ergänzen
 
     /**
      * Beginn: Getter- und Setter-Methoden
@@ -28,4 +30,5 @@ public class Film {
     public void setId(Long id) {
         this.id = id;
     }
+
 }
