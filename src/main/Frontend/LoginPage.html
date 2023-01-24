@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+    <link rel="icon" href="Hollywoodvideo_logo.jpg" type="image/icon type">
+</head>
+<body>
+      <a href="HomePage.html"><img class="hollywood" src="Hollywoodvideo_logo.jpg" alt="HWLogo"></a>
+      <img class="dgxlogo" src="dgxlogo.png" alt="DGXLogo">
+
+      <div class="navbar">
+          <ul>
+              <li><a href="LoginPage.html">Login</a></li>
+          </ul>
+      </div>
+
+      <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login_form" method="post" action="HomePage.html" name="form" onsubmit="return validated()">
+          <div class="font">E-mail</div>
+          <input autocomplete="off" type="text" name="email">
+          <div id="email_error">Please fill in your E-mail</div>
+          <div class="font font2">Password</div>
+          <input type="password" name="password">
+          <div id="pass_error">Please fill in your password</div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <footer>
+          <div class="impressum">
+              <div class="inner-box">
+                  <table>
+                      <tr>
+                          <td>Links</td>
+                      </tr>
+                      <tr>
+                          <td>DG Nexolution</td>
+                      </tr>
+                      <tr>
+                          <td>GenoBuy Portal</td>
+                      </tr>
+                      <tr>
+                          <td>Nachrichten</td>
+                      </tr>
+                      <tr>
+                          <td>Mitarbeiterverzeichnis</td>
+                      </tr>
+                      <tr>
+                          <td>GenoBuy Eigenbedarf</td>
+                      </tr>
+                  </table>
+                  <table class="impressum-table">
+                      <tr>
+                          <td>Hilfe</td>
+                      </tr>
+                      <tr>
+                          <td>Online Hilfe</td>
+                      </tr>
+                      <tr>
+                          <td>Feed-Builder</td>
+                      </tr>
+                      <tr>
+                          <td>Neuigkeiten</td>
+                      </tr>
+                      <tr>
+                          <td>Verfügbare Gadgets</td>
+                      </tr>
+                      <tr>
+                          <td>Informationen zu Confluence</td>
+                      </tr>
+                  </table>
+                  <table class="impressum-table">
+                      <tr>
+                          <td>
+                              Intranet-Tools
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Bereichsverzeichnis</td>
+                      </tr>
+                      <tr>
+                          <td>Categories</td>
+                      </tr>
+                      <tr>
+                          <td>Personen</td>
+                      </tr>
+                      <tr>
+                          <td>Microblog</td>
+                      </tr>
+                      <tr>
+                          <td>Kalendar</td>
+                      </tr>
+                      <tr>
+                          <td>News-Portal</td>
+                      </tr>
+                      <tr>
+                          <td>Launchpad</td>
+                      </tr>
+                      <tr>
+                          <td>Event-Portal</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+
+      </footer>
+      <script>
+        var email = document.forms['form']['email'];
+        var password = document.forms['form']['password'];
+
+        var email_error = document.getElementById('email_error');
+        var pass_error = document.getElementById('pass_error');
+
+
+        function validated() {
+            if (email.value != "hikmet@dgx.de") {
+                email.style.border = "1px solid red";
+                email_error.style.display = "block";
+                email.focus();
+                return false;
+            }
+            if (password.value.length < 6) {
+                password.style.border = "1px solid red";
+                pass_error.style.display = "block";
+                password.focus();
+                return false;
+            }
+        }
+      </script>
+
+
+</body>
+</html>
