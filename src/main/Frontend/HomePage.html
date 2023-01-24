@@ -17,22 +17,26 @@
         <img class="dgxlogo" src="dgxlogo.png" alt="DGXLogo">
     </div>
 
-    <div class="searchbar">
+    <!--<div class="searchbar">
         <div class="boxContainer">
             <table class="elementsContainer">
                 <tr>
                     <td>
-                        <input type="text" class="search">
+                        <input type="search" class="search">
                     </td>
                     <td>
                         <a href="#">
                             <i class="material-symbols-outlined">search</i>
                         </a>
                     </td>
+                     <td> ToDo: Array list indexOf
+                            <h4 class="film-name">Fight Club</h4>
+                        <img class="film-img-search" src="Fight_Club.jpg" alt="FightClub">
+                    </td>
                 </tr>
             </table>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="navbar">
@@ -57,7 +61,8 @@
             <h4 class="film-name">Fight Club</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button" id="leihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 1)" class="ausleihen-button" id="leihen-button1">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 1)" class="ausleihen-button" id="reenable1">Zurückgeben</button>
             </div>
         </div><br>
 
@@ -66,7 +71,8 @@
             <h4 class="film-name">Interstellar</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 2)" class="ausleihen-button" id="leihen-button2">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 2)" class="ausleihen-button" id="reenable2">Zurückgeben</button>
             </div>
         </div>
         <div class="film">
@@ -74,7 +80,8 @@
             <h4 class="film-name">Avatar</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 3)" class="ausleihen-button" id="leihen-button3">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 3)" class="ausleihen-button" id="reenable3">Zurückgeben</button>
             </div>
         </div><br>
 
@@ -83,7 +90,8 @@
             <h4 class="film-name">Inception</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 4)" class="ausleihen-button" id="leihen-button4">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 4)" class="ausleihen-button" id="reenable4">Zurückgeben</button>
             </div>
         </div>
         <div class="film">
@@ -91,7 +99,8 @@
             <h4 class="film-name">The Godfather</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 5)" class="ausleihen-button" id="leihen-button5">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 5)" class="ausleihen-button" id="reenable5">Zurückgeben</button>
             </div>
         </div><br>
 
@@ -100,7 +109,9 @@
             <h4 class="film-name">The Green Mile</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+            <!--    <button onclick="ausleihenDisable(this)" onchange="enable(this)" class="ausleihen-button" id="leihen-button6">Ausleihen</button> -->
+                <button onclick="ausleihenDisable(this, 6)" class="ausleihen-button" id="leihen-button6">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 6)" class="ausleihen-button" id="reenable6">Zurückgeben</button>
             </div>
         </div>
 
@@ -113,7 +124,8 @@
             <h4 class="film-name">Harry Potter</h4>
             <div class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this, 7)" class="ausleihen-button" id="leihen-button7">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 7)" class="ausleihen-button" id="reenable7">Zurückgeben</button>
             </div>
         </div><br>
 
@@ -122,7 +134,8 @@
             <h4 class="film-name">Lord of the Rings</h4>
             <div id="test1" class="button-gruppe">
                 <button onclick="togglePopup()" class="oberer-button">Details</button>
-                <button onclick="ausleihenDisable(this)" class="ausleihen-button">Ausleihen</button>
+                <button onclick="ausleihenDisable(this,8)" class="ausleihen-button" id="leihen-button8">Ausleihen</button>
+                <button onclick="zuruckgeben(this, 8)" class="ausleihen-button" id="reenable8">Zurückgeben</button>
             </div>
         </div>
         <div class="popup" id="Popup-1">
@@ -134,10 +147,7 @@
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat.</p>
             </div>
-
         </div>
-
-
     </div>
 <footer>
     <div class="impressum">
@@ -218,16 +228,26 @@
 
 </footer>
 <script>
-    function ausleihenDisable(x) {
-        x.disabled = true;
+    function ausleihenDisable(button) {
+
+        nummer = button.id.charAt(button.id.length-1);
+        document.getElementById('reenable'+nummer).disabled = false;
+        button.disabled = true;
     }
 
-    <!-- Possibly program a third button called "zurückgeben" to enable the "ausleihen" button -->
+    function zuruckgeben(x) {
+       console.log("zurückgeben : " + x);
+        document.getElementById('leihen-button'+nummer).disabled = false;
+        x.disabled = true;
 
-    function togglePopup(){
+    }
+    function enable(x) {
+        document.getElementById('reenable').disabled = false;
+    }
+
+    function togglePopup() {
         document.getElementById("Popup-1").classList.toggle("active");
     }
-
 </script>
 
 </body>

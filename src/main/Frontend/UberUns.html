@@ -7,6 +7,7 @@
     <link rel="icon" href="Hollywoodvideo_logo.jpg" type="image/icon type">
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
     <span class="material-symbols-outlined"></span>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <a href="HomePage.html"><img class="hollywood" src="Hollywoodvideo_logo.jpg" alt="HWLogo"></a>
@@ -23,7 +24,7 @@
             <li><a href="UberUns.html">Über Uns</a></li>
         </ul>
     </div>
-    <div class="searchbar">
+    <!-- <div class="searchbar">
         <div class="boxContainer">
             <table class="elementsContainer">
                 <tr>
@@ -38,8 +39,54 @@
                 </tr>
             </table>
         </div>
+    </div> -->
+
+    <div class="search-wrapper">
+        <label for="search">Search Films</label>
+        <input type="search" id="search" data-search>
     </div>
+    <div class="user-cards" data-user-cards-container></div>
+        <template data-user-template>
+            <div class="card">
+                <div class="header" data-header></div>
+                <div class="body" data-body></div>
+            </div>
+        </template>
+
 
 
 </body>
+<script>
+    const userCardTemplate = document.querySelector("[data-user-template]")
+    const userCardContainer = document.querySelector("[data-user-cards-container]")
+    const searchInput = document.querySelector("[data-search]")
+
+    let users = []
+
+    searchInput.addEventListener("input", e => {
+        const value = e.target.value.toLowerCase()
+        users.forEach(user => {
+            const isVisible =
+                user.name.toLowerCase().includes(value) ||
+                user.email.toLowerCase().includes(value)
+            user.element.classList.toggle("hide", !isVisible)
+        })
+    })
+
+    fetch('film.JSON')
+        .then(res => res.json())
+        .then(data => {
+            users = data.map(user => {
+                const card = userCardTemplate.content.cloneNode(true).children[0]
+                const header = card.querySelector("[data-header]")
+                const body = card.querySelector("[data-body]")
+                header.textContent = user.name
+                body.textContent = user.email
+                userCardContainer.append(card)
+                return { name: user.name, email: user.email, element: card }
+            })
+            console.log(users);
+        })
+
+</script>
 </html>
