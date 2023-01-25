@@ -46,7 +46,8 @@ public class FilmController {
     @GetMapping("/find/{id}")
     public ResponseEntity<Film> getFilmById(@PathVariable("id") Long id) {
         // Hinweis: Die Methode wird nicht mehr rot markiert sein, wenn diese Methode in der Klasse FilmService existiert
-        Film film = filmService.findFilmById(id);
+       // Film film = filmService.findFilmById(id);
+        Film film = new Film();
         return new ResponseEntity<>(film, HttpStatus.OK);
     }
 

@@ -14,7 +14,7 @@ searchInput.addEventListener("input", e => {
     })
 })
 
-fetch('film.JSON')
+/*fetch('http://10.61.137.91:8080/film.JSON')
     .then(res => res.json())
     .then(data => {
         users = data.map(user => {
@@ -27,7 +27,24 @@ fetch('film.JSON')
             return { name: user.name, email: user.email, element: card }
         })
         console.log(users);
+    })*/
+
+
+async function d() {
+    const response = await fetch("film.json")
+        .then(res => res.json())
+        .then(data => {
+            users = data.map(user => {
+    const card = userCardTemplate.content.cloneNode(true).children[0]
+    const header = card.querySelector("[data-header]")
+    const body = card.querySelector("[data-body]")
+    header.textContent = user.name
+    body.textContent = user.email
+    userCardContainer.append(card)
+    return {name: user.name, email: user.email, element: card}
     })
+    console.log(users);
+})}
 
 
 
